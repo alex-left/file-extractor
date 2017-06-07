@@ -1,0 +1,12 @@
+#!/bin/bash
+IFS=$(echo -en "\n\b")
+if [ $# -ne 1 ]; then
+	echo ' Usage: extraer [path] '
+	exit 1
+fi
+for FILE in $(find "${1}" -name "*")
+	do	
+		if [ -f ${FILE} ]; then
+	 	mv ${FILE} ${1} && echo "\"${FILE}\" movido"
+		fi		
+	done
